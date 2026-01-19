@@ -1,0 +1,90 @@
+Table,Variable Name,Class and Units,Description
+macro_density,period,yyyy-mm,sampling date in year-month format.
+macro_density,date,yyyy-mm-dd,sampling date in year-month-day format.
+macro_density,site,categorical,name of sampling site
+macro_density,diver,categorical,initials of person(s) who collected data.
+macro_density,transect,"categorical, numeric range",refers to 1 of 3 permanent transect lines at a particular site (exception to Aug 2018 where additional lines were created in between permanent ones)
+macro_density,side,categorical,refers to right or left side of transect when divers look towards the 20m end.
+macro_density,transect_length,"numerical, m",refers to the total length surveyed 1m on either side of the transect
+macro_density,distance,"numerical, m",distance of the plant holdfast along the transect line starting at 0 (exception to Aug 2018 where a binned distance was sometimes recorded 2_6 or 2m to 6m)
+macro_density,depth,"numerical, m",fixed depth associated with site (2016-2018). Actual holdfast depth at time of survey was recorded prior to 2016.
+macro_density,fixed_depth,"numerical, m",refers to the mean mean water site depth pre-established prior to conducting the survey
+macro_density,time,hh:mm,recorded in 24 hour time
+macro_density,fronds_1m,"numerical, m","number of fronds at 1m above the holdfast of a particular plant, should be recorded for all plants. Prior to 2016, kelps less than 1m tall were recorded as 0."
+macro_density,C_P_T,categorical,"cut, partial, or tangled plants. Enter NA when nothing has been recorded in this column. Note that only one identifier should be included for each kelp (e.g. Cť not C/Pť)."
+macro_density,comment1,character,any notes recorded by divers or data processors.
+macro_density,comment2,character,additional notes recorded by divers or data processors.
+macro_metrics,Interval,"categorical, numeric range",numerical series where each integer corresponds to a sampling period starting from site establishment to present time
+macro_metrics,Month_Yr,mmm-yyyy,month and year identifier corresponding to time interval
+macro_metrics,Site,categorical,name of sampling site
+macro_metrics,Date,yyyy-mm-dd,sampling date in year-month-day format.
+macro_metrics,Diver,categorical,initials of person(s) who collected data.
+macro_metrics,Transect,"categorical, numeric range",refers to 1 of 3 permanent transect lines at a particular site (exception to Aug 2018 where additional lines were created in between permanent ones)
+macro_metrics,Transect_length,"numerical, m",refers to the total length surveyed 1m on either side of the transect
+macro_metrics,Side,categorical,refers to right or left side of transect when divers look towards the 20m end.
+macro_metrics,Distance,"numerical, m",distance of the plant holdfast along the transect line starting at 0 (exception to Aug 2018 where a binned distance was sometimes recorded 2_6 or 2m to 6m)
+macro_metrics,Fixed_depth,"numerical, m",refers to the mean mean water site depth pre-established prior to conducting the survey
+macro_metrics,Depth,"numerical, m",fixed depth associated with site (2016-2018). Actual holdfast depth at time of survey was recorded prior to 2016.
+macro_metrics,Time,hh:mm,recorded in 24 hour time
+macro_metrics,Tag,"categorical, numeric range","tag number, included only in instances where a plant is tagged for frond or plant loss. If the kelp is not tagged, enter NA. "
+macro_metrics,C_P_T,categorical,"cut, partial, or tangled plants. Enter NA when nothing has been recorded in this column. Note that only one identifier should be included for each kelp (e.g. Cť not C/Pť)."
+macro_metrics,Frond_1m,"numerical, m","number of fronds at 1m above the holdfast of a particular plant, should be recorded for all plants. Prior to 2016, kelps less than 1m tall were recorded as 0."
+macro_metrics,Fronds_SFC,"numerical, m","number of fronds that reach the surface for a particular plant. This should be recorded as 0 when there are no fronds reaching the surface, but left blank for tangled and partial plants (unless diver has provided an estimate)."
+macro_metrics,SFC_Long,"numerical, m","surface length of longest frond for a particular plant. Again, this should be recorded as 0 when there is no surface canopy, but left blank for tangled or partial plants (unless diver has provided an estimate)."
+macro_metrics,Mean_F,"numerical, m","mean frond length for kelps that do not reach the surface. When a kelp does reach the surface, enter NA."
+macro_metrics,Fronds_exist,"integer, count","number of existing tagged fronds from the previous interval, in the case of kelps tagged for frond loss. If the kelp is not tagged, enter NA."
+macro_metrics,Fronds_new,"integer, count","number of new shoot (aka untagged fronds) at that sampling interval. Note that these fronds should be tagged after they are counted. If the kelp is not tagged, enter NA."
+macro_metrics,Sporo,"integer, count","total number of sporophylls counted on tagged plants. If sporophylls were not counted, enter NA."
+macro_metrics,Sporo_R,"integer, count","number of sporophylls with reproductive sori on tagged plants. If sporophylls were not counted, enter NA."
+macro_metrics,Sporo_P,"integer, percentage","percent of sporophyll area covered by reproductive sori on sporophylls that are reproductive. If sporophylls were not counted, enter NA."
+macro_metrics,Tidal_Height,"numerical, m","tide height at that time and date, based on closest tide station. "
+macro_metrics,Note1,character,any notes recorded by divers or data processors.
+macro_metrics,Note2,character,additional notes recorded by divers or data processors.
+macro_harvest,Site,categorical,name of sampling site
+macro_harvest,Date,yyyy-mm-dd,sampling date in year-month-day format.
+macro_harvest,Diver,categorical,initials of person(s) who collected data.
+macro_harvest,Tag,"categorical, numeric range","id referring to specific plant. Only unique to specific site, date combination."
+macro_harvest,Frond,integer,number associated to a particular frond within a plant/tag.
+macro_harvest,SUB_SFC,categorical,"categorizes section of the frond measured; subsurface section (SUB, less than the site specific depth) or surface section (SFC, anything longer than the site specific depth)"
+macro_harvest,Length_m,"numerical, m",length of the section in meters
+macro_harvest,Stipe_weight,"numerical, kg",weight of the stipe for that section (separated from the blades)
+macro_harvest,Blade_weight,"numerical, kg",weight of the blades for that section (separated from the stipe)
+macro_harvest,Section_weight,"numerical, kg",weight of both the stipe and blade combined for that section of the frond
+macro_harvest,Frond_length,"numerical, m",length of individual frond
+macro_harvest,Frond_weight,"numerical, kg",wet weight of individual frond
+macro_harvest,C_NB,categorical,indicator recorded for cut (C) and/or no blade (NB) plants. Enter NA when nothing has been recorded in this column.
+macro_harvest,Notes,character,any notes recorded by divers or data processors.
+macro_wetdry,interval,"categorical, numeric range",numerical series where each integer corresponds to a sampling period starting from site establishment to present time
+macro_wetdry,site,categorical,name of sampling site
+macro_wetdry,date,yyyy-mm-dd,sampling date in year-month-day format.
+macro_wetdry,sampleID,"categorical, numeric range",refers to chronologically assigned ID number unique to this project
+macro_wetdry,uniqueID,"categorical, numeric range","refers to Nearshore wide IDs, kept track of in the Nearshore Isotope dataset"
+macro_wetdry,stipe_blade,categorical,indicates whether the sample is from blade or stipe material
+macro_wetdry,length,numerical,indicates whether 5 cm segments of stipes versus 5 or 20 cm by 5cm blade pieces were used
+macro_wetdry,tray,"numerical, mg",weight of empty tray
+macro_wetdry,tray_wet,"numerical, mg",weight of tray and wet sample
+macro_wetdry,time_oven,numerical,number of hours in drying oven at 60C
+macro_wetdry,tray_dry,"numerical, mg",weight of tray and dry sample
+macro_wetdry,comments,character,"can be anything, often a reason/explanation about missing measurements."
+macro_biomass_plot,site,categorical,name of sampling site
+macro_biomass_plot,period,yyyy-mm,sampling date in year-month format.
+macro_biomass_plot,year,yyyy,sampling year
+macro_biomass_plot,month,mmm,sampling month (abreviation) 
+macro_biomass_plot,date,yyyy-mm-dd,sampling date in year-month-day format.
+macro_biomass_plot,mean_biomass_m2,"numerical, kg/m2",wet weight estimate in kg/m2 across for each site-sampling event combination based on frond count to plant weight relationship by region
+macro_biomass_plot,stdev_biomass_m2,"numerical, kg/m2","standard deviation around the mean wet weight estimate in kg/m2 , based on frond count to plant weight relationship by region"
+macro_biomass_plot,mean_biomass_m2_FS,"numerical, kg/m2",wet weight estimate in kg/m2 across for each site-sampling event combination based on frond count to plant weight relationship by site
+macro_biomass_plot,stdev_biomass_m2_FS,"numerical, kg/m2","standard deviation around the mean wet weight estimate in kg/m2 , based on frond count to plant weight relationship by site"
+macro_biomass_plot,mean_frond_density_m2,"numerical, frond/m2",average frond density per plot across for each site-sampling event combination 
+macro_biomass_plot,stdev_frond_density_m2,"numerical, frond/m2",standard deviation around the mean frond density 
+macro_biomass_plot,mean_plant_density_m2,"numerical, plant/m2",average plant density per plot across for each site-sampling event combination 
+macro_biomass_plot,stdev_plant_density_m2,"numerical, plant/m2",standard deviation around the mean plant density 
+plant_weight_site_coeff,site,categorical,name of sampling site
+plant_weight_site_coeff,coeff_FS,numerical ,coefficient for the regression between frond count at 1m and plant wet weight (kg) by site 
+plant_weight_site_coeff,r_sqr_FS,numerical ,R-squared value associated with the relationship between frond count at 1m and plant wet weight (kg) by site 
+plant_weight_site_coeff,coeff_FR,numerical ,coefficient for the regression between frond count at 1m and plant wet weight (kg) for the region
+plant_weight_site_coeff,r_sqr_FR,numerical ,R-squared value associated with the relationship between frond count at 1m and plant wet weight (kg) the region
+plant_weight_site_coeff,coeff_PS,numerical ,coefficient for the regression between cummulative length (all fronds) in meter and plant wet weight (kg) by site 
+plant_weight_site_coeff,r_sqr_PS,numerical ,R-squared value associated with the relationship between cummulative length (all fronds) in meter and plant wet weight (kg) by site 
+plant_weight_site_coeff,coeff_PR,numerical ,coefficient for the regression between cummulative length (all fronds) in meter and plant wet weight (kg) for the region
+plant_weight_site_coeff,r_sqr_PR,numerical ,R-squared value associated with the relationship between cummulative length (all fronds) in meter and plant wet weight (kg) for the region

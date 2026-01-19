@@ -1,0 +1,252 @@
+interval,site,date,sampleID,uniqueID,stipe_blade,length,tray,tray_wet,time_oven,tray_dry,comments
+10,Westbeach,2016-06-10,31,MI0039,blade,5,8001.5,9301.6,26,8220.9,
+10,Westbeach,2016-06-10,32,MI0040,blade,5,8517.5,9735.1,26,8674.4,
+10,Westbeach,2016-06-10,33,MI0041,blade,5,8245.8,10128.9,26,8514.7,
+10,Westbeach,2016-06-10,34,MI0042,blade,5,8452.3,10132.1,26,8636.8,
+10,Westbeach,2016-06-10,35,MI0043,blade,5,8240.7,10197.2,26,8490.8,
+10,Westbeach,2016-06-10,36,MI0044,blade,5,6530.6,8295.4,26,6747.9,
+10,Westbeach,2016-06-10,37,MI0045,blade,5,8007.6,10275,26,8434.5,
+10,Westbeach,2016-06-10,38,MI0046,blade,5,8235.6,9872.7,26,8461.4,
+10,Westbeach,2016-06-10,39,MI0047,blade,5,6585.7,8465.6,26,6838.2,
+10,Westbeach,2016-06-10,40,MI0048,blade,5,5895.3,7636.9,26,6075.5,
+10,Meay,2016-06-10,41,MI0049,blade,5,8191.9,9276.7,26,8327.8,
+10,Meay,2016-06-10,42,MI0050,blade,5,8472.3,9946.6,26,8613.3,
+10,Meay,2016-06-10,43,MI0051,blade,5,8459.3,10134.5,26,8718.3,
+10,Meay,2016-06-10,44,MI0052,blade,5,8236.2,9481.7,26,8396.6,
+10,Meay,2016-06-10,45,MI0053,blade,5,8065.4,9540,26,8275.8,
+10,Meay,2016-06-10,46,MI0054,blade,5,5870.4,7023.3,26,5996.6,
+10,Meay,2016-06-10,47,MI0055,blade,5,6568.9,7908.7,26,6741.8,
+10,Meay,2016-06-10,48,MI0056,blade,5,8195.5,9665.1,26,8428.1,
+10,Meay,2016-06-10,49,MI0057,blade,5,6588.6,7880.9,26,6791.5,
+10,Meay,2016-06-10,50,MI0058,blade,5,5835.6,7066.2,26,5988.2,
+10,Triquet,2016-06-11,51,MI0059,blade,5,8191,9219,24,8325.4,
+10,Triquet,2016-06-11,52,MI0060,blade,5,8691,9962.9,24,8909,
+10,Triquet,2016-06-11,53,MI0061,blade,5,6819.8,7794,24,6953.2,
+10,Triquet,2016-06-11,54,MI0062,blade,5,8309.3,9793.9,24,8492.8,
+10,Triquet,2016-06-11,55,MI0063,blade,5,8244.6,9578.7,24,8360.5,
+10,Triquet,2016-06-11,56,MI0064,blade,5,8529.2,9693.4,24,8685.1,
+10,Triquet,2016-06-11,57,MI0065,blade,5,8693.7,9947.9,24,8860.1,
+10,Triquet,2016-06-11,58,MI0066,blade,5,6530.2,7902.7,24,6744,
+10,Triquet,2016-06-11,59,MI0067,blade,5,6533.5,7723.5,24,6695.5,
+10,Triquet,2016-06-11,60,MI0068,blade,5,8689.1,9756.1,24,8838.2,
+11,Westbeach,2016-08-11,61,NA,stipe,5,1021.4,3669.1,24,1324.5,
+11,Westbeach,2016-08-11,62,NA,stipe,5,706.9,3105,24,1003.7,
+11,Westbeach,2016-08-11,63,NA,stipe,5,776.5,3485.1,24,1099.1,
+11,Westbeach,2016-08-11,64,NA,stipe,5,776.7,3705.5,24,1153.8,
+11,Westbeach,2016-08-11,65,NA,stipe,5,851.4,2440.3,24,1034.3,
+11,Westbeach,2016-08-11,66,NA,stipe,5,912.1,2690.6,24,1134.7,
+11,Westbeach,2016-08-11,61,MI0312,blade,5,762.4,2458.9,24,1011.5,
+11,Westbeach,2016-08-11,62,MI0313,blade,5,703.6,2305.1,24,964.9,
+11,Westbeach,2016-08-11,63,MI0314,blade,5,821.1,2986.7,24,1070.2,
+11,Westbeach,2016-08-11,64,MI0315,blade,5,783.4,3099,24,1087.3,
+11,Westbeach,2016-08-11,66,MI0317,blade,5,874.5,3295.2,24,1079.4,
+11,Westbeach,2016-08-12,77,MI0318,blade,5,549.2,952.8,24,770.7,
+11,Westbeach,2016-08-12,78,MI0319,blade,5,775.8,1074.2,24,1029.4,
+11,Triquet,2016-08-12,67,MI0322,blade,5,742.1,1293,23,961,
+11,Triquet,2016-08-12,68,MI0323,blade,5,749.6,926.3,23,896.3,
+11,Triquet,2016-08-12,69,MI0324,blade,5,760.2,1793,23,NA,"tray_dry is 1373.1, perhaps not entirely dry ???"
+11,Triquet,2016-08-12,70,MI0325,blade,5,417.2,1099.4,23,592.2,
+11,Triquet,2016-08-12,71,MI0326,blade,5,743.7,964.6,23,928.6,
+11,Triquet,2016-08-12,72,MI0327,blade,5,397.4,683.9,23,581.8,
+11,Triquet,2016-08-12,73,MI0328,blade,5,309.6,898.4,23,474.7,
+11,Triquet,2016-08-12,74,MI0329,blade,5,372.4,706.1,23,591.7,
+11,Triquet,2016-08-12,75,MI0330,blade,5,430,683,23,595.9,
+11,Triquet,2016-08-12,76,MI0331,blade,5,432.3,862.6,23,641.1,
+11,Meay,2016-08-15,81,MI0332,blade,5,881.1,2303.6,18,1137.3,
+11,Meay,2016-08-15,82,MI0333,blade,5,891.7,2172.5,18,1031.2,
+11,Meay,2016-08-15,83,MI0334,blade,5,730.5,2359,18,949.8,
+11,Meay,2016-08-15,84,MI0335,blade,5,788.3,2539.7,18,1051.4,
+11,Meay,2016-08-15,85,MI0336,blade,5,901.7,2238.8,18,1065.9,
+11,Meay,2016-08-15,86,MI0337,blade,5,931,2214.9,18,1104.1,
+11,Meay,2016-08-15,87,MI0338,blade,5,553.5,1983.6,18,757.2,
+11,Meay,2016-08-15,88,MI0339,blade,5,1031.9,2845.2,18,1270.6,
+11,Meay,2016-08-15,81,NA,stipe,5,908.9,3775,18,1266,
+11,Meay,2016-08-15,82,NA,stipe,5,854.7,3645.1,18,1137.4,
+11,Meay,2016-08-15,83,NA,stipe,5,812.9,3407.1,18,1117.6,
+11,Meay,2016-08-15,85,NA,stipe,5,681.5,3473.2,18,1005.3,
+11,Meay,2016-08-15,86,NA,stipe,5,748.7,4542.5,18,1266.2,
+11,Meay,2016-08-15,87,NA,stipe,5,661.1,2973,18,948.1,
+11,Meay,2016-08-15,88,NA,stipe,5,736.9,4090.5,18,1168.4,
+11,Triquet,2016-08-12,67,NA,stipe,5,766,1995.7,23,974.2,
+11,Triquet,2016-08-12,68,NA,stipe,5,676.7,2840.8,23,1114.4,
+11,Triquet,2016-08-12,69,NA,stipe,5,659.6,1874,23,917.5,
+11,Triquet,2016-08-12,70,NA,stipe,5,555.2,1772.1,23,791.6,
+11,Triquet,2016-08-12,71,NA,stipe,5,468.3,1510.5,23,747.5,
+11,Triquet,2016-08-12,72,NA,stipe,5,510.3,1618.7,23,792.3,
+11,Triquet,2016-08-12,73,NA,stipe,5,359.2,1145.8,23,540.7,
+11,Triquet,2016-08-12,74,NA,stipe,5,371.5,1266.4,23,527.7,
+11,Triquet,2016-08-12,75,NA,stipe,5,351.7,1919,23,644,
+11,Triquet,2016-08-12,76,NA,stipe,5,334.7,983.1,23,498.4,
+11,Stryker,2016-08-29,89,MI0367,blade,5,1271.6,3296.8,44,1502.5,
+11,Stryker,2016-08-29,90,MI0368,blade,5,1271.5,3366.6,44,1538.5,
+11,Stryker,2016-08-29,91,MI0369,blade,5,1215.2,3227,44,1496,
+11,Stryker,2016-08-29,92,MI0370,blade,5,1287.7,3143.2,44,1501.1,some had to be strapped off due to bryozoans
+11,Stryker,2016-08-29,93,MI0371,blade,5,1287,3111.2,44,1521.7,
+11,Stryker,2016-08-29,94,MI0372,blade,5,1235.8,2992.6,44,1469.8,
+11,Stryker,2016-08-29,95,MI0373,blade,5,1302.4,3068.9,44,1442.7,
+11,Stryker,2016-08-29,96,MI0374,blade,5,1280.4,2912,44,1434.3,
+11,Stryker,2016-08-29,97,MI0375,blade,5,1179.4,3298.8,44,1465.3,
+11,Stryker,2016-08-29,98,MI0376,blade,5,1296.5,3622,44,1545.3,
+11,Stryker,2016-08-29,89,NA,stipe,5,1258,4129.4,44,1630,
+11,Stryker,2016-08-29,90,NA,stipe,5,1254,3740.5,44,1581.2,
+11,Stryker,2016-08-29,91,NA,stipe,5,1166,3909.5,44,1605.3,
+11,Stryker,2016-08-29,92,NA,stipe,5,1247.2,4253.4,44,1675.2,
+11,Stryker,2016-08-29,93,NA,stipe,5,1271.1,3714.3,44,1643.9,
+11,Stryker,2016-08-29,94,NA,stipe,5,1369.5,4194.7,44,1693.9,
+11,Stryker,2016-08-29,95,NA,stipe,5,1315.3,3424,44,1562.9,
+11,Stryker,2016-08-29,96,NA,stipe,5,1190,4083.8,44,1466.8,
+11,Stryker,2016-08-29,97,NA,stipe,5,1180.5,4389.3,44,1623.7,
+11,Stryker,2016-08-29,98,NA,stipe,5,1234.8,3821,44,1621.5,
+12,Triquet,2016-09-07,99,MI0377,blade,5,1315.2,3028.4,72,1499.8,
+12,Triquet,2016-09-07,100,MI0378,blade,5,1308,3164.2,72,1466.2,
+12,Triquet,2016-09-07,101,MI0379,blade,5,1234.6,2441.4,72,1369.7,
+12,Triquet,2016-09-07,102,MI0380,blade,5,1246.5,2308.8,72,1346.9,
+12,Triquet,2016-09-07,103,MI0381,blade,5,1180.9,2191.6,72,1293.6,
+12,Triquet,2016-09-07,104,MI0382,blade,5,1259.7,1935.7,72,1386.6,
+12,Triquet,2016-09-07,105,MI0383,blade,5,1169.2,2219.7,72,1263.8,
+12,Triquet,2016-09-07,106,MI0384,blade,5,1219.8,2292.9,72,1366.2,
+12,Triquet,2016-09-07,107,MI0385,blade,5,1221.6,2545.8,72,1369.9,
+12,Triquet,2016-09-07,108,MI0386,blade,5,1138,2371,72,1260.4,
+12,Simmonds,2016-09-08,109,MI0387,blade,5,1270.1,2836.3,72,1491.3,
+12,Simmonds,2016-09-08,110,MI0388,blade,5,1246,2667.4,72,1460.4,
+12,Simmonds,2016-09-08,111,MI0389,blade,5,1240.6,3052.7,72,1431.5,
+12,Simmonds,2016-09-08,112,MI0390,blade,5,1184.5,2895.7,72,1390.4,
+12,Simmonds,2016-09-08,113,MI0391,blade,5,1208.7,3102.9,72,1413.8,
+12,Simmonds,2016-09-08,114,MI0392,blade,5,1210.3,3349.2,72,1457,
+12,Simmonds,2016-09-08,115,MI0393,blade,5,1305.1,2841.3,72,1494.5,
+12,Simmonds,2016-09-08,116,MI0394,blade,5,1314.7,3216.5,72,1517.1,
+12,Simmonds,2016-09-08,117,MI0395,blade,5,1339.2,2921.3,72,1502.7,
+12,Simmonds,2016-09-08,118,MI0396,blade,5,1800,3301.5,72,1965.9,
+12,Simmonds,2016-09-08,109,NA,stipe,5,1174.3,3786.8,72,1490.8,
+12,Simmonds,2016-09-08,110,NA,stipe,5,1234,3102,72,1460.2,
+12,Simmonds,2016-09-08,111,NA,stipe,5,1206.6,3412.3,72,1440.9,
+12,Simmonds,2016-09-08,112,NA,stipe,5,282.4,2528.8,72,511.9,
+12,Simmonds,2016-09-08,113,NA,stipe,5,322.3,3396.9,72,698.4,
+12,Simmonds,2016-09-08,114,NA,stipe,5,336.3,2950.8,72,634.4,
+12,Simmonds,2016-09-08,115,NA,stipe,5,370.3,2414.8,72,595.7,
+12,Simmonds,2016-09-08,116,NA,stipe,5,335,3352.8,72,633.7,
+12,Simmonds,2016-09-08,117,NA,stipe,5,335.9,3611.1,72,900.4,
+12,Simmonds,2016-09-08,118,NA,stipe,5,363.5,1809.2,72,541.3,
+12,Meay,2016-09-07,119,MI0436,blade,5,1493.8,3557.2,48,1749.9,
+12,Meay,2016-09-07,120,MI0437,blade,5,1469.3,2943.4,48,1665.1,
+12,Meay,2016-09-07,121,MI0438,blade,5,1192.3,3444.9,48,1433.8,
+12,Meay,2016-09-07,122,MI0439,blade,5,988.7,2897.8,48,1203.5,
+12,Meay,2016-09-07,123,MI0440,blade,5,1049.4,3342.4,48,1270.8,
+12,Meay,2016-09-07,124,MI0441,blade,5,1299.3,3026.3,48,1530.2,
+12,Meay,2016-09-07,125,MI0442,blade,5,1068.3,3197.4,48,1279.4,
+12,Meay,2016-09-07,126,MI0443,blade,5,1245.5,2861.1,48,1433.4,
+12,Meay,2016-09-07,127,MI0444,blade,5,840.2,2578,48,1080.5,
+12,Meay,2016-09-07,128,MI0445,blade,5,1422.7,2887,48,1610.3,
+12,Westbeach,2016-09-11,129,MI0446,blade,5,1458.2,4649.3,48,1690.1,
+12,Westbeach,2016-09-11,130,MI0447,blade,5,1016.8,3274.6,48,1234.4,
+12,Westbeach,2016-09-11,131,MI0448,blade,5,776.4,3161.8,48,1024.4,
+12,Westbeach,2016-09-11,132,MI0449,blade,5,960.2,2868.2,48,1168.9,
+12,Westbeach,2016-09-11,133,MI0450,blade,5,1256.7,3600.2,48,1496.1,
+12,Westbeach,2016-09-11,134,MI0451,blade,5,1184.3,3587,48,1402.3,
+12,Westbeach,2016-09-11,135,MI0452,blade,5,942.6,2903.4,48,1143.9,
+12,Westbeach,2016-09-11,136,MI0453,blade,5,793.7,3073,48,1038,
+12,Westbeach,2016-09-11,137,MI0454,blade,5,969.5,2946,48,1139.1,
+12,Westbeach,2016-09-11,138,MI0455,blade,5,778,2439.3,48,1012.9,
+13,Meay,2016-11-13,139,MI0557,blade,5,351.3,2030.8,72,514.7,
+13,Meay,2016-11-13,140,MI0558,blade,5,372.8,2002.6,72,564.1,
+13,Meay,2016-11-13,141,MI0559,blade,5,416.7,1046.9,72,526.1,
+13,Meay,2016-11-13,142,MI0560,blade,5,349.9,1325.2,72,478,
+13,Meay,2016-11-13,143,MI0561,blade,5,350.6,1507.5,72,474.6,
+13,Meay,2016-11-13,144,MI0562,blade,5,345.6,1798.8,72,514.3,
+13,Meay,2016-11-13,145,MI0563,blade,5,382.3,1584.2,72,517.5,
+13,Triquet,2016-11-14,146,MI0614,blade,5,381.9,2008,72,549.6,
+13,Triquet,2016-11-14,147,MI0615,blade,5,322.1,1607.2,72,455.7,
+13,Triquet,2016-11-14,148,MI0616,blade,5,402.6,1740.1,72,548.1,
+13,Triquet,2016-11-14,149,MI0617,blade,5,372.1,2086.5,72,571.3,
+13,Triquet,2016-11-14,150,MI0618,blade,5,288.3,1491.5,72,411.9,
+13,Triquet,2016-11-14,151,MI0619,blade,5,333.8,1821.6,72,497.7,
+13,Triquet,2016-11-14,152,MI0620,blade,5,330.1,1809.5,72,511.2,
+17,Womanley,2017-07-15,195,MI0894,blade,5,460.6,1451.7,24,556.1,
+17,Womanley,2017-07-15,196,MI0894,stipe,5,472.9,1504.3,24,579.5,
+17,Womanley,2017-07-15,197,MI0895,blade,5,518.7,1782.3,24,703.7,
+17,Womanley,2017-07-15,198,MI0895,stipe,5,475.8,2141.9,24,764.5,
+17,Womanley,2017-07-15,199,MI0896,blade,5,455.8,1617.8,24,601.9,
+17,Womanley,2017-07-15,200,MI0896,stipe,5,447.6,1916,24,629.3,
+17,Womanley,2017-07-15,201,MI0897,blade,5,486.8,1988.5,24,688.8,
+17,Womanley,2017-07-15,202,MI0897,stipe,5,590.6,4093.1,24,973.6,
+17,Womanley,2017-07-15,203,MI0898,blade,5,546,1952.6,24,693,
+17,Womanley,2017-07-15,204,MI0898,stipe,5,638.1,2828.6,24,861.8,
+17,Womanley,2017-07-15,205,MI0899,blade,5,552.7,2005.5,24,682.8,
+17,Womanley,2017-07-15,206,MI0899,stipe,5,445.2,1894.8,24,605,
+17,Triquet,2017-07-14,207,MI0888,blade,5,558.9,1470.7,24,696.4,
+17,Triquet,2017-07-14,208,MI0888,stipe,5,562.3,2515.5,24,759.3,
+17,Triquet,2017-07-14,209,MI0889,stipe,5,612.2,3692.2,24,969.3,
+17,Triquet,2017-07-14,210,MI0889,blade,5,545.9,2232.1,24,799,
+17,Triquet,2017-07-14,211,MI0890,blade,5,626,1630,24,775.1,
+17,Triquet,2017-07-14,212,MI0890,stipe,5,571.2,2196,24,825.5,
+17,Triquet,2017-07-14,213,MI0891,blade,5,508.7,1794.2,24,700.8,
+17,Triquet,2017-07-14,214,MI0891,stipe,5,521.5,3038.1,24,841,
+17,Triquet,2017-07-14,215,MI0892,blade,5,489,1741.2,24,665.5,
+17,Triquet,2017-07-14,216,MI0892,stipe,5,541.3,2219,24,803.8,
+17,Triquet,2017-07-14,217,MI0893,blade,5,470.7,2027.4,24,783.4,
+17,Triquet,2017-07-14,218,MI0893,stipe,5,514,2425.1,24,765.9,
+19,simmonds,2019-07-04,85.1,NA,stipe,5,7824.1,12462.1,24,8257.8,"sample id was replicate, added .1"
+19,simmonds,2019-07-04,86.1,NA,blade,20,7941.9,9828,24,8221,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,simmonds,2019-07-04,87.1,NA,blade,20,7643.8,9725.8,24,7968.2,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,simmonds,2019-07-04,88.1,NA,stipe,5,7110.7,886.9,24,7270,"sample id was replicate, added .1"
+19,simmonds,2019-07-04,89.1,NA,blade,20,7237.5,8911.7,24,7499.8,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,simmonds,2019-07-04,90.1,NA,blade,20,10105.4,11840.6,24,10275.4,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,simmonds,2019-07-04,91.1,NA,blade,20,7539.8,9211.6,24,7695.2,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,simmonds,2019-07-04,92.1,NA,stipe,5,7353.4,11048.8,24,7709.2,"sample id was replicate, added .1"
+19,simmonds,2019-07-04,93.1,NA,stipe,5,7553.1,10697.8,24,7838.7,"sample id was replicate, added .1"
+19,simmonds,2019-07-04,94.1,NA,stipe,5,7172.5,9427.1,24,7396.8,"sample id was replicate, added .1"
+19,stryker,2019-07-05,95.1,NA,blade,20,7027.2,8301.5,24,7181.5,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,stryker,2019-07-05,96.1,NA,blade,20,7823.4,8963.5,24,7959.9,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,stryker,2019-07-05,97.1,NA,blade,20,7116.6,8364.7,24,7269.2,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,stryker,2019-07-05,98.1,NA,blade,20,7685.7,8857,24,7827.3,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,stryker,2019-07-05,99.1,NA,blade,20,7538.2,9050.6,24,7724.3,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,stryker,2019-07-05,100.1,NA,stipe,5,7171.5,9090.7,24,7383.3,"sample id was replicate, added .1"
+19,stryker,2019-07-05,101.1,NA,stipe,5,7852.1,10041.7,24,8073.7,"sample id was replicate, added .1"
+19,stryker,2019-07-05,102.1,NA,stipe,5,7700.4,9887.9,24,7921.3,"sample id was replicate, added .1"
+19,stryker,2019-07-05,103.1,NA,stipe,5,7120.2,9099.2,24,7325.3,"sample id was replicate, added .1"
+19,stryker,2019-07-05,104.1,NA,stipe,5,8180.2,10096.9,24,8401.3,"sample id was replicate, added .1"
+19,Meay,2019-07-08,105.1,NA,blade,20,7937.5,9577.7,24,8154.6,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Meay,2019-07-08,106.1,NA,blade,20,7215.3,9915.4,24,7478.9,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Meay,2019-07-08,107.1,NA,blade,20,7684,9890.3,24,7992.7,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Meay,2019-07-08,108.1,NA,blade,20,7362.3,9493.1,24,7699.9,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Meay,2019-07-08,109.1,NA,blade,20,7360,9395.2,24,7673.8,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Meay,2019-07-08,110.1,NA,stipe,5,7842.5,10045.2,24,8102.1,"sample id was replicate, added .1"
+19,Meay,2019-07-08,111.1,NA,stipe,5,7215.5,8389.2,24,7352,"sample id was replicate, added .1"
+19,Meay,2019-07-08,112.1,NA,stipe,5,7838.5,10370.3,24,8124.1,"sample id was replicate, added .1"
+19,Meay,2019-07-08,113.1,NA,stipe,5,7834.9,10014.2,24,8106.5,"sample id was replicate, added .1"
+19,Meay,2019-07-08,114.1,NA,stipe,5,7214.8,9360,24,7485.6,"sample id was replicate, added .1"
+19,Triquet,2019-07-10,115.1,NA,blade,20,7667,9953.6,24,8066.1,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Triquet,2019-07-10,116.1,NA,blade,20,7699.6,9214.3,24,7920.2,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Triquet,2019-07-10,117.1,NA,blade,20,7366.5,10580.9,24,7781.5,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Triquet,2019-07-10,118.1,NA,blade,20,7702.4,9857.6,24,8069.3,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Triquet,2019-07-10,119.1,NA,blade,20,7917.3,10323,24,8267.7,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Womanley,2019-07-11,120.1,NA,stipe,5,7120,9355.2,24,7414.7,"sample id was replicate, added .1"
+19,Womanley,2019-07-11,121.1,NA,stipe,5,9719.1,13544.2,24,10101.7,"sample id was replicate, added .1"
+19,Womanley,2019-07-11,122.1,NA,stipe,5,7556.1,10811.9,24,7846.3,"sample id was replicate, added .1"
+19,Womanley,2019-07-11,123.1,NA,stipe,5,7207.3,10017.2,24,7554.7,"sample id was replicate, added .1"
+19,Womanley,2019-07-11,124.1,NA,stipe,5,7819,11375.8,24,8190.6,"sample id was replicate, added .1"
+19,Womanley,2019-07-11,125.1,NA,blade,20,7934.2,9025.3,24,8063.2,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Womanley,2019-07-11,126.1,NA,blade,20,7819.6,9839.1,24,8106.3,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Womanley,2019-07-11,127.1,NA,blade,20,7357.5,9218.5,24,7631.9,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Womanley,2019-07-11,128.1,NA,blade,20,7819.6,9835.9,24,NA,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Womanley,2019-07-11,129.1,NA,blade,20,7934.2,9022.4,24,NA,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Golden,2019-07-11,130.1,NA,blade,20,7817.6,9824.1,24,8114.2,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Golden,2019-07-11,131.1,NA,blade,20,7830.6,9997.3,24,8143.4,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Golden,2019-07-11,132.1,NA,blade,20,7116.2,9788.1,24,7446.6,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Golden,2019-07-11,133.1,NA,blade,20,7099.2,8328.9,24,7312.8,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Golden,2019-07-11,134.1,NA,blade,20,7941.9,9648.7,24,8219.9,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Golden,2019-07-11,135.1,NA,stipe,5,10227.9,14270.7,24,10682.1,"sample id was replicate, added .1"
+19,Golden,2019-07-11,136.1,NA,stipe,5,7988.3,9242.1,24,8119.4,"sample id was replicate, added .1"
+19,Golden,2019-07-11,137.1,NA,stipe,5,7946.4,10979.4,24,8231,"sample id was replicate, added .1"
+19,Golden,2019-07-11,138.1,NA,stipe,5,7195,11496.2,24,7752,"sample id was replicate, added .1"
+19,Golden,2019-07-11,139.1,NA,stipe,5,7119.2,10312.7,24,7497.5,"sample id was replicate, added .1"
+19,Westbeach,2019-07-12,140.1,NA,stipe,5,7237.5,11436.8,24,7723.2,"sample id was replicate, added .1"
+19,Westbeach,2019-07-12,141.1,NA,stipe,5,7939.1,11614.1,24,8311.2,"sample id was replicate, added .1"
+19,Westbeach,2019-07-12,142.1,NA,stipe,5,7818.8,10047.5,24,8071.6,"sample id was replicate, added .1"
+19,Westbeach,2019-07-12,143.1,NA,stipe,5,7700.8,11062.7,24,8186.6,"sample id was replicate, added .1"
+19,Westbeach,2019-07-12,144.1,NA,stipe,5,7917.5,11636.8,24,8372,"sample id was replicate, added .1"
+19,Westbeach,2019-07-12,145.1,NA,blade,20,7689.5,10111.3,24,8144.4,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Westbeach,2019-07-12,146.1,NA,blade,20,7361.4,8957.1,24,7706.7,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Westbeach,2019-07-12,147.1,NA,blade,20,7701.7,9497.7,24,7995.8,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Westbeach,2019-07-12,148.1,NA,blade,20,10191.5,11642.5,24,10463.6,"sample id was replicate, added .1, blade section = 20cm by 5cm"
+19,Westbeach,2019-07-12,149.1,NA,blade,20,7110.7,9331.6,24,7469.1,"sample id was replicate, added .1, blade section = 20cm by 5cm"

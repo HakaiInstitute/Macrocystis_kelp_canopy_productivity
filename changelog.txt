@@ -1,0 +1,80 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## [v1.4.0] - 2026-01-19
+### Changed
+- updated data package title to: Macrocystis kelp canopy productivity data from BC Central Coast, v1.4.0
+- separated “transect.csv” into 2 csv
+- macro_density.csv (only includes plant and frond density data) 
+- macro_metrics.csv (includes variables for calculating plant size and changes in productivity)
+- updated readme document 
+
+### Renamed
+- harvest.csv to macro_harvest.csv
+- wet_dry.csv to macro_wetdry.csv
+
+### Added to pre-existing files
+- added summer 2022-2015 monitoring data to 
+- macro_density.csv
+- macro_metrics.csv
+- macro_harvest.csv
+- added new sites (Ivory_HIRMD, Cape_mark_HIRMD, McMullins_HIRMD, McMullins_north_HIRMD, Goose_HIRMD and Triquetta) to protocols map and table 
+- added 2 new variables to both macro_density.csv and macro_metrics.csv, protocols and data_dictionary (Fixed_depth and Transect_length) 
+- added new macro_biomass_plot.csv , macro_density.csv and macro_metrics.csv variables to data_dictionary.csv
+
+### Added
+- frond_count_biomass_estimates.R - script to calculate biomass estimates based on frond count per plant, creates macro_biomass_plot.csv and plant_weight_site_coeff.csv
+- plant_length_biomass_estimates.R - script to calculate biomass estimates based on various methods including cumulative length per plant, creates method comparison figure by sites
+- macro_biomass_plot.csv - summary of density and biomass estimates within plot by site and sampling event (biomass estimates are based on frond count to wet weight relationships)
+- plant_weight_site_coeff.csv - summary of the coefficients pertaining to  plant morphometrics (frond count or cumulative length) and plant weight by site or region
+
+
+
+## [v1.3.0] - 2021-09-10
+### Changed
+- updated data package title to: Macrocystis kelp canopy productivity data from BC Central Coast, v1.3.0
+- added summer 2021 monitoring data to 
+- transect.csv
+- harvest.csv
+- added 4 new sites (Simmonds_HIRMD, Spider_HIRMD, Stryker_HIRMD and Lyte) to protocols map and table 
+
+## [v1.2.0] - 2020-12-14
+### Changed
+- updated data package title to: Macrocystis kelp canopy productivity data from BC Central Coast, v1.2.0
+- added summer 2020 monitoring data to 
+- transect.csv
+- harvest.csv
+- added 2 new sites (Manley and Triqster) to protocols map and table 
+
+
+## [v1.1.0] - 2019-12-01
+### Changed
+- changed data package title to: Macrocystis kelp canopy productivity data from BC Central Coast, 2014-2019 v1.1.0
+- changed LICENSE.txt to include full license agreement
+- changed Hakai Catalogue meta data form to short/concise version
+- added summer 2019 monitoring data to 
+- transect.csv
+- harvest.csv
+- wet_dry.csv
+- updated Protocol to include new sites visited in summer 2019
+
+
+## [v1.0.0] - 2019-04-01
+### Notes
+- This is the initial release of the Macrocystis Canopy Production Dataset - BC Central Coast - 2014-2018.
+
+###Added 
+- changelog.txt to track future changes to this project
+- README.txt for short description of what's included in the data package and how to use it
+- LICENSE.txt for license description
+- Data_dictionary.csv for defining variables found within datasets
+- transect.csv 
+- harvest.csv
+- wet_dry.csv 
+- Protocols.pdf
+
+
+
+
