@@ -40,17 +40,12 @@ Dried M. pyrifera tissue (macro_wetdry.csv)
 
 Link to any associated resources:
 
-- Previous versions are archived [here](https://drive.google.com/drive/folders/1_w-ruJOlgZy3nC4GeozNiPs6rM5vBCnb)
+- Previous versions are archived [here](https://drive.google.com/drive/folders/1cdvOEI-bFlnNRFEBRXxy2cadgl58nr0c)
 - Data Management Plan
 - CIOOS CKAN record
 - ERDDAP Dataset
 - External Data Repositories
 - Publications
-
-
-## How to contribute
-
-To contribute to the code or contents, please fork this repository, make your suggested modifications and generate a pull request (PR). For any issues related to the code or contents, please create an issue in this repository. A good issue sufficiently outlines the problem, and where possible suggests a solution. Please give the owners of this repository ample time to review issues or suggestions. Finally, for general inquires related to the data, please contact the data provider as listed in the referenced metadata record in the Hakai Catalogue. 
 
 *This repository is generated via the [Hakai dataset repository template](https://github.com/HakaiInstitute/hakai-dataset-repository-template)*
 
