@@ -40,27 +40,28 @@ macro_metrics,Sporo_P,"integer, percentage","percent of sporophyll area covered 
 macro_metrics,Tidal_Height,"numerical, m","tide height at that time and date, based on closest tide station. "
 macro_metrics,Note1,character,any notes recorded by divers or data processors.
 macro_metrics,Note2,character,additional notes recorded by divers or data processors.
-macro_harvest,Site,categorical,name of sampling site
-macro_harvest,Date,yyyy-mm-dd,sampling date in year-month-day format.
-macro_harvest,Diver,categorical,initials of person(s) who collected data.
-macro_harvest,Tag,"categorical, numeric range","id referring to specific plant. Only unique to specific site, date combination."
-macro_harvest,Frond,integer,number associated to a particular frond within a plant/tag.
+macro_harvest,period,yyyy-mm,sampling date in year-month format.
+macro_harvest,site,categorical,name of sampling site
+macro_harvest,date,yyyy-mm-dd,sampling date in year-month-day format.
+macro_harvest,diver,categorical,initials of person(s) who collected data.
+macro_harvest,tag,"categorical, numeric range","id referring to specific plant. Only unique to specific site, date combination."
+macro_harvest,frond,integer,number associated to a particular frond within a plant/tag.
 macro_harvest,SUB_SFC,categorical,"categorizes section of the frond measured; subsurface section (SUB, less than the site specific depth) or surface section (SFC, anything longer than the site specific depth)"
-macro_harvest,Length_m,"numerical, m",length of the section in meters
-macro_harvest,Stipe_weight,"numerical, kg",weight of the stipe for that section (separated from the blades)
-macro_harvest,Blade_weight,"numerical, kg",weight of the blades for that section (separated from the stipe)
-macro_harvest,Section_weight,"numerical, kg",weight of both the stipe and blade combined for that section of the frond
-macro_harvest,Frond_length,"numerical, m",length of individual frond
-macro_harvest,Frond_weight,"numerical, kg",wet weight of individual frond
-macro_harvest,C_NB,categorical,indicator recorded for cut (C) and/or no blade (NB) plants. Enter NA when nothing has been recorded in this column.
-macro_harvest,Notes,character,any notes recorded by divers or data processors.
+macro_harvest,length_m,"numerical, m",length of the section in meters
+macro_harvest,stipe_weight,"numerical, kg",weight of the stipe for that section (separated from the blades)
+macro_harvest,blade_weight,"numerical, kg",weight of the blades for that section (separated from the stipe)
+macro_harvest,section_weight,"numerical, kg",weight of both the stipe and blade combined for that section of the frond
+macro_harvest,frond_length,"numerical, m",length of individual frond
+macro_harvest,frond_weight,"numerical, kg",wet weight of individual frond
+macro_harvest,C_NB_T,categorical,indicator recorded for cut (C) and/or no blade (NB) plants and/or terminal (T) frond tip rather than scimitar where frond elongates upwards. Enter NA when nothing has been recorded in this column.
+macro_harvest,notes,character,any notes recorded by divers or data processors.
 macro_wetdry,interval,"categorical, numeric range",numerical series where each integer corresponds to a sampling period starting from site establishment to present time
 macro_wetdry,site,categorical,name of sampling site
 macro_wetdry,date,yyyy-mm-dd,sampling date in year-month-day format.
 macro_wetdry,sampleID,"categorical, numeric range",refers to chronologically assigned ID number unique to this project
 macro_wetdry,uniqueID,"categorical, numeric range","refers to Nearshore wide IDs, kept track of in the Nearshore Isotope dataset"
 macro_wetdry,stipe_blade,categorical,indicates whether the sample is from blade or stipe material
-macro_wetdry,length,numerical,indicates whether 5 cm segments of stipes versus 5 or 20 cm by 5cm blade pieces were used
+macro_wetdry,length,numerical,indicates the length of the stipe or blade colelcted in cm 
 macro_wetdry,tray,"numerical, mg",weight of empty tray
 macro_wetdry,tray_wet,"numerical, mg",weight of tray and wet sample
 macro_wetdry,time_oven,numerical,number of hours in drying oven at 60C

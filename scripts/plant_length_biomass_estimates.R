@@ -26,10 +26,9 @@ rm(list = ls())
 lapply(c("tidyr", "plyr", "dplyr", "ggplot2", "magrittr", "ggpmisc",
          "lubridate", "knitr", "tidyverse", "reshape2", "ggpubr"), library, character.only = T)
 
-#set directory
 
-data <- read_csv("macro_size.csv")
-site_coeff <- read_csv("plant_weight_site_coeff.csv")%>%
+data <- read_csv("1_raw_data/2025/macro_metrics.csv", na = c("", "NA", "na"))
+site_coeff <- read_csv("3_derived_data/2025/plant_weight_site_coeff.csv")%>%
   rename(Site= site)
 
 #' ##Functions
@@ -401,7 +400,7 @@ macro_clean_Cc <- merge(macro_clean_Cc, site_coeff) %>%
 
 #' 0.2 is the up-to-date region coefficient between the cumulative frond length to plant weight from harvested plants (harvest.csv), using all plant sections, site/sampling events combined 
 #' coefficient used to be 0.24727 - Kira K. 2016
-#write.csv(macro_clean_Cc, "plant_length_macro_clean.csv")
+#write.csv(macro_clean_Cc, "3_derived_data/2024/plant_length_macro_clean.csv")
 
 # AT THIS POINT CHECK FOR NAs !!!! 
 
@@ -427,7 +426,7 @@ lter_transect_biomass <- macro_clean_Cc %>%
              Plant_density_m2 = Plant_total/(Transect_length*2),
              Cummulative_length = sum(Total_Length), 
              Cummulative_length_m2 = Cummulative_length/(Transect_length*2))
-#write.csv(lter_transect_biomass, "plant_length_transect_estimates.csv")
+#write.csv(lter_transect_biomass, "3_derived_data/2024/plant_length_transect_estimates.csv")
 #summary table per transect line
 
 #' By plots
@@ -445,7 +444,7 @@ plot_based_biomass <-lter_transect_biomass %>%
                     stdev_frond_density_m2 = sd(Frond_density_m2),
                     mean_plant_density_m2 = mean(Plant_density_m2),               
                     stdev_plant_density_m2 = sd(Plant_density_m2))
-#write.csv(plot_based_biomass, "plant_length_plot_estimates.csv")
+write.csv(plot_based_biomass, "3_derived_data/2025/macro_biomass_plot_plant_length.csv")
 #summary table for plots/sites
 
 
@@ -512,10 +511,20 @@ ggplot(plot_based_biomass)+
   
   
 ### METHOD COMPARISON ------------------------
-#LR (or PR) cumulative plant length and region
-#LS (or PS) cumulative plant length and site
-#CR (or FR) plant frond count and region
-#CS (or FS) plant frond count and site
+
+# comparing method estimates in realtion to frond density
+ggplot(plot_based_biomass)+
+  geom_point(aes(x = mean_frond_density_m2, y = mean_biomass_m2_PS), size = 3, colour = "red") +
+  geom_smooth(aes(x = mean_frond_density_m2, y = mean_biomass_m2_PS), method = 'lm', se = FALSE, colour = "red")+
+  
+  geom_point(aes(x = mean_frond_density_m2, y = mean_biomass_m2_PR), size = 3, colour = "green") +
+  geom_smooth(aes(x = mean_frond_density_m2, y = mean_biomass_m2_PR), method = 'lm', se = FALSE, colour = "green")+
+  
+  geom_point(aes(x = mean_frond_density_m2, y = mean_biomass_m2_FR), size = 3, colour = "blue") +
+  geom_smooth(aes(x = mean_frond_density_m2, y = mean_biomass_m2_FR), method = 'lm', se = FALSE, colour = "blue")+
+  
+  geom_point(aes(x = mean_frond_density_m2, y = mean_biomass_m2_FS), size = 3, colour = "yellow") +
+  geom_smooth(aes(x = mean_frond_density_m2, y = mean_biomass_m2_FS), method = 'lm', se = FALSE, colour = "yellow")
 
 #' How frond density and cummulative length vary from one another at various scales 
 
@@ -525,12 +534,13 @@ ggplot(macro_clean_Cc, aes(x = Fronds_1m , y = Total_Length)) +
   stat_poly_line(method = lm, formula = y~x+0)+
   stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))
 ggplot(macro_clean_Cc, aes(x = Fronds_1m , y = Total_Length)) + 
+  geom_abline(slope = 7.21, intercept = 0, linetype = "dashed", color = "red")+
   geom_point () +
   stat_poly_line(method = lm, formula = y~x+0)+
   stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
   facet_wrap(.~Site)
 
-#Plant cumulative length to frond count relationship fro every transect
+#Plant cumulative length to frond count relationship for every transect
 ggplot(lter_transect_biomass, aes(x = Frond_density_m2 , y = Cummulative_length_m2)) + 
   geom_point () +
   stat_poly_line(method = lm, formula = y~x+0)+
@@ -538,35 +548,151 @@ ggplot(lter_transect_biomass, aes(x = Frond_density_m2 , y = Cummulative_length_
 ggplot(lter_transect_biomass, aes(x = Frond_density_m2 , y = Cummulative_length_m2)) + 
   geom_point () +
   stat_poly_line(method = lm, formula = y~x+0)+
+  geom_abline(slope = 6.72, intercept = 0, linetype = "dashed", color = "red")+ 
   stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
   facet_wrap(.~Site)
 
-#Biomass estimates method comparison (comparing site specific based estimates since they are most specific)
+#Biomass based on plant cumulative length and biomass based on frond count relationship for every plot (regional estimates)
+ggplot(plot_based_biomass, aes(x = mean_biomass_m2_FR , y = mean_biomass_m2_PR)) + 
+  geom_point () +
+  stat_poly_line(method = lm, formula = y~x+0)+
+  stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))
+ggplot(plot_based_biomass, aes(x = mean_biomass_m2_FR , y = mean_biomass_m2_PR)) +
+  geom_point () +
+  stat_poly_line(method = lm, formula = y~x+0)+
+  geom_abline(slope = 1.06, intercept = 0, linetype = "dashed", color = "red")+ 
+  stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
+  facet_wrap(.~Site)
+
+### plant weight estimates comparison ---------------
+#plot1
 ggplot(macro_clean_Cc, aes(x = TWFS , y = TWPS)) + 
   geom_point () +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red")+  # 1:1 line
   stat_poly_line(method = lm, formula = y~x+0)+
-  stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))
-ggplot(macro_clean_Cc, aes(x = TWFS , y = TWPS)) + 
+  #stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*"))+
+  labs(x="Site specific and Count based - 
+       Plant Wet Weight (kg)", y="Site specific and Length based -
+       Plant Wet Weight (kg)")+
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x=element_text(angle=90),
+        text=element_text(size=12))
+ggplot(macro_clean_Cc, aes(x = TWFS , y = TWPS, colour = Site)) + 
+  geom_point ( color = "grey") +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red")+  # 1:1 line
+  stat_poly_line(method = lm, formula = y~x+0)+
+  #stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*"))+
+  labs(x="Site specific and Count based - 
+       Plant Wet Weight (kg)", y="Site specific and Length based -
+       Plant Wet Weight (kg)")+
+  scale_color_brewer(palette = "Paired")+
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x=element_text(angle=90),
+        text=element_text(size=12))
+
+#plot2
+ggplot(macro_clean_Cc, aes(x = TWFR , y = TWPR)) + 
+  geom_point ( ) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red")+  # 1:1 line
+  stat_poly_line(method = lm, formula = y~x+0)+
+  #stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
+  labs(x="Region specific and Count based - 
+       Plant Wet Weight (kg)", y="Region specific and Length based -
+       Plant Wet Weight (kg)")+
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x=element_text(angle=90),
+        text=element_text(size=12))
+
+ggplot(macro_clean_Cc, aes(x = TWFR , y = TWPR, colour = Site)) + 
+  geom_point ( color = "grey") +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red")+  # 1:1 line
+  stat_poly_line(method = lm, formula = y~x+0)+
+  #stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
+  labs(x="Region specific and Count based - 
+       Plant Wet Weight (kg)", y="Region specific and Length based -
+       Plant Wet Weight (kg)")+
+  scale_color_brewer(palette = "Paired")+
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x=element_text(angle=90),
+        text=element_text(size=12))
+
+#plot3
+ggplot(macro_clean_Cc, aes(x = TWPR , y = TWPS)) + 
+  geom_point () +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red")+  
+  stat_poly_line(method = lm, formula = y~x+0)+
+  #stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
+  labs(x="Region specific and Length based - 
+       Plant Wet Weight (kg)", y="Site specific and Length based -
+       Plant Wet Weight (kg)")+
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x=element_text(angle=90),
+        text=element_text(size=12))
+
+ggplot(macro_clean_Cc, aes(x = TWPR , y = TWPS, colour = Site)) + 
+  geom_point ( color = "grey") +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red")+  
+  stat_poly_line(method = lm, formula = y~x+0)+
+  #stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
+  labs(x="Region specific and Length based - 
+       Plant Wet Weight (kg)", y="Site specific and Length based -
+       Plant Wet Weight (kg)")+
+  scale_color_brewer(palette = "Paired")+
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x=element_text(angle=90),
+        text=element_text(size=12))
+
+#plot4
+ggplot(macro_clean_Cc, aes(x = TWFR , y = TWFS)) + 
   geom_point () +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red")+  # 1:1 line
   stat_poly_line(method = lm, formula = y~x+0)+
   stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
-  facet_wrap(.~Site)
+  labs(x="Region specific and Count based - 
+       Plant Wet Weight (kg)", y="Site specific and Count based -
+       Plant Wet Weight (kg)")+
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x=element_text(angle=90),
+        text=element_text(size=12))
 
-#Biomass estimates method comparison (comparing region specific based estimates)
-ggplot(macro_clean_Cc, aes(x = TWFR , y = TWPR)) + 
-  geom_point () +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red")+  # 1:1 line
-  stat_poly_line(method = lm, formula = y~x+0)+
-  stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))
-ggplot(macro_clean_Cc, aes(x = TWFR , y = TWPR)) + 
-  geom_point () +
+ggplot(macro_clean_Cc, aes(x = TWFR , y = TWFS, color = Site)) + 
+  geom_point (color = "grey" ) +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "red")+  # 1:1 line
   stat_poly_line(method = lm, formula = y~x+0)+
   stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
-  facet_wrap(.~Site)
+  labs(x="Region specific and Count based - 
+       Plant Wet Weight (kg)", y="Site specific and Count based -
+       Plant Wet Weight (kg)")+
+  scale_color_brewer(palette = "Paired")+
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x=element_text(angle=90),
+        text=element_text(size=12))
 
+# mean plant weight 
 macro_clean_Cc_long <- melt(macro_clean_Cc, id.vars=c("Site", "Interval", "Transect", "Transect_length", "year", "month", "Date", "Fronds_1m", "Fronds_SFC_measured", "SFC_Long")) %>%
   filter(variable %in% c("TWPS", "TWPR", "TWFR", "TWFS")) #%>%
   #mutate(variable = fct_recode(variable, 
@@ -594,7 +720,7 @@ plot_based_biomass_long <- melt(plot_based_biomass, id.vars=c("Site", "Interval"
                                "LR" = "mean_biomass_m2_PR", 
                                "LS"= "mean_biomass_m2_PS",
                                "CR"="mean_biomass_m2_FR", 
-                               "CF"="mean_biomass_m2_FS"))
+                               "CS"="mean_biomass_m2_FS"))
 
 plot_based_biomass_long$value <- as.numeric(plot_based_biomass_long$value)
 
@@ -607,20 +733,6 @@ ggplot(plot_based_biomass_long, aes(x=variable, y=value, group = variable))+
         text=element_text(size=12))+
   facet_grid(.~Site, scale = "free")+
   labs(x="", y="Plot Biomass Estimates (kg/m2)")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

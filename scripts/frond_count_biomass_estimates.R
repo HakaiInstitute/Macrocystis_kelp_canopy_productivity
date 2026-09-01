@@ -3,7 +3,7 @@
 #Frond count based biomass estimates for Macrocystis canopy on Central Coast of BC
 
 #Written by Ondine Pontier
-#Last update made November 2024
+#Last update made Apri 2025
 
 #This script summarizes macrocystis biomass at each site within a region of the Central Coast BC, based on average plant weight across densities within an permanently delineated plot within the site (step 3).
 ## Plant density is estimated around 3 transect lines (2m swath by 20m length each) at each site (step 2).
@@ -11,19 +11,17 @@
 
 #Set Up
 rm(list = ls())
-#install.packages("")
+#install.packages(")
 lapply(c("tidyr", "plyr", "dplyr", "ggplot2", "magrittr", 
          "lubridate", "knitr", "tidyverse", "reshape2", 
-         "ggpubr", "ggpp", "ggpmisc"), library, character.only = T)
+         "ggpubr", "ggpp", "ggpmisc", "lme4"), library, character.only = T)
 
-### SET UP and FUNCTION ### -----------------------------
 
-#set working directory
 
 # import files using their relative paths within the project folder
-data <- read_csv("macro_density.csv") %>%
+data <- read_csv("1_raw_data/2025/macro_density.csv") %>%
   filter(fronds_1m >=1)
-harvest_raw <- read_csv("macro_harvest.csv")
+harvest_raw <- read_csv("1_raw_data/2025/macro_harvest.csv", na = c("", "NA", "na"))
 
 data$year <- year(data$date)#create column for year (separate from month)
 data$month <- lubridate::month(data$date, label = TRUE)#create column for month (separate from year)
@@ -37,7 +35,7 @@ harvest_raw$year <- as.factor(year(harvest_raw$date))
 harvest_raw$month <- lubridate::month(harvest_raw$date, label = TRUE)
 
 harvest_raw <- harvest_raw[! harvest_raw$year %in% c('2014'),]
-#removes 2014 data becasue plants were harvested from the surface, not entire plants!!! 
+#removes 2014 data because plants were harvested from the surface, not entire plants!!! 
 
 # Reformating Harvest Data
 
@@ -53,7 +51,7 @@ harvest1 <- subset(harvest_raw, frond_length >=1) %>%
 harvest2 <- harvest_raw %>%
   drop_na(section_weight) %>%
   group_by(year, month, site, date, tag, frond) %>% 
-  summarise(frond_length = sum(length_m),
+  dplyr::summarise(frond_length = sum(length_m),
             frond_weight = sum(section_weight)) %>%
   subset(frond_length >=1) 
   #removes fronds shorter than 1m 
@@ -115,6 +113,7 @@ harvest_plant <- ddply (harvest, c("site", "year", "month", "tag"), summarise,
 #' Relation between plant cummulative length and plant wet weight for the region across years
 ggplot(harvest_plant, aes(x = plant_length , y = plant_weight))+#, col = Site)) + 
   geom_point () +
+  labs(x="Plant cummulative length (m) - all fronds", y="Plant weight (kg)")+
   stat_poly_line(method = lm, formula = y~x+0)+
   stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
   theme_bw()+
@@ -130,6 +129,7 @@ summary(plantWL)
 #' Relation between plant length and plant wet weight for each site
 ggplot(harvest_plant, aes(x = plant_length , y = plant_weight))+#, col = Site)) + 
   geom_point () +
+  labs(x="Plant cummulative length (m) - all fronds", y="Plant weight (kg)")+
   stat_poly_line(method = lm, formula = y~x+0)+
   stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
   theme_bw()+
@@ -161,7 +161,7 @@ for (i in 1:length(sites)) {
 # creates loop that fills in matrix with desired parameters from the regression and 
 # adds region specifc coefficient and r-squared values to dataframe
 site_plant_length_plant_weight_coeff <- data.frame(coeff_plant)%>%
-  rename(coeff_PS = coeff, r_sqr_PS = r_sqr) %>%
+  dplyr::rename(coeff_PS = coeff, r_sqr_PS = r_sqr) %>%
   mutate(
     coeff_PS = as.numeric(as.character(coeff_PS)),
     r_sqr_PS = as.numeric(as.character(r_sqr_PS)),
@@ -177,6 +177,7 @@ ggplot(harvest_plant, aes(x = frond_count , y = plant_weight)) +
   stat_poly_line(method = lm, formula = y~x+0)+
   stat_poly_eq(formula = y~x+0, aes(label = paste(after_stat(eq.label),after_stat(rr.label), sep = "*\", \"*")))+
   theme_bw()+
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "gray40")+
   theme(panel.grid.minor = element_blank(),
         panel.grid.major = element_blank(),
         axis.text.x=element_text(angle=90),
@@ -185,6 +186,9 @@ ggplot(harvest_plant, aes(x = frond_count , y = plant_weight)) +
 frondWC <-lm(plant_weight ~ frond_count + 0, data = harvest_plant)
 summary(frondWC)
 #lm regression for above plot, plant weight as a function of frond count (at 1m)
+frondWC_site_slope_only <- lmer(plant_weight ~ 0 + frond_count + (0 + frond_count | site), data = harvest_plant)
+summary(frondWC_site_slope_only)
+#slope variance (0.0297) suggests there's some variation in how strongly frond count predicts weight across different sites — though not a huge amount
 
 #' Relation between frond count and plant wet weight for each site
 ggplot(harvest_plant, aes(x = frond_count , y = plant_weight)) + 
@@ -197,6 +201,28 @@ ggplot(harvest_plant, aes(x = frond_count , y = plant_weight)) +
         panel.grid.major = element_blank(),
         axis.text.x=element_text(angle=90),
         text=element_text(size=12))
+
+
+ggplot(harvest_plant[harvest_plant$plant_weight <= 30, ], aes(x = plant_weight, fill = site)) + 
+  geom_density(alpha = 0.5) +  
+  #facet_wrap(.~ site) +         
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x = element_text(angle = 90),
+        text = element_text(size = 12)) +
+  labs(title = "Density Distribution of Plant Weight Across Sites (Limited to 30)",
+       x = "Plant Weight", y = "Density")
+
+ggplot(harvest_plant, aes(x = plant_weight)) + 
+  geom_density(alpha = 0.5) +  # Adjust alpha for transparency
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        axis.text.x = element_text(angle = 90),
+        text = element_text(size = 12)) +
+  labs(x = "Plant Weight", y = "Density")
+
 
 #' creates a data frame with coefficients and r-squared values
 lm_frond <- function( site ) { 
@@ -216,7 +242,7 @@ for (i in 1:length(sites)) {
 }
 # creates loop that fills in matrix with desired parameters from the regression
 site_frond_count_plant_weight_coeff <- data.frame(coeff_frond)%>%
-  rename(coeff_FS = coeff, r_sqr_FS = r_sqr) %>%
+  dplyr::rename(coeff_FS = coeff, r_sqr_FS = r_sqr) %>%
   mutate(
     coeff_FS = as.numeric(as.character(coeff_FS)),
     r_sqr_FS = as.numeric(as.character(r_sqr_FS)),
@@ -226,7 +252,7 @@ site_frond_count_plant_weight_coeff <- data.frame(coeff_frond)%>%
 str(site_frond_count_plant_weight_coeff)
 
 site_coefficients <- merge(site_frond_count_plant_weight_coeff, site_plant_length_plant_weight_coeff)
-#write.csv(site_coefficients, "plant_weight_site_coeff.csv")
+write.csv(site_coefficients, "3_derived_data/2025/plant_weight_site_coeff.csv",row.names = FALSE)
 
 #model statistics
 
@@ -247,7 +273,7 @@ canopy <- join(data, site_frond_count_plant_weight_coeff) %>%
   mutate(TWFS = fronds_1m *coeff_FS)
 #calculates Total Weight based on Frond count using Site specific coefficient
 
-#write.csv(canopy, "frond_count_macro_clean.csv")
+#write.csv(canopy, "3_derived_data/2024/frond_count_macro_clean.csv")
 
 ## Summary by Transect 
 # transects are 2m wide by their lengths may varies
@@ -262,7 +288,7 @@ frond_count_biomass_transect <- canopy %>%
                     Frond_m2 = Frond_total/(Transect_length*2),
                     Plant_total = length(fronds_1m),
                     Plant_m2 = Plant_total/(Transect_length*2))
-#write.csv(frond_count_biomass_transect, "3_derived_data/2024/frond_count_transect_estimates.csv")
+write.csv(frond_count_biomass_transect, "3_derived_data/2025/frond_count_transect_estimates.csv", row.names = FALSE)
 
 
 #summarize by Site
@@ -276,8 +302,8 @@ frond_count_biomass_plot <-frond_count_biomass_transect %>%
                     stdev_frond_density_m2 = sd(Frond_m2),
                     mean_plant_density_m2 = mean(Plant_m2),               
                     stdev_plant_density_m2 = sd(Plant_m2))
-#write.csv(frond_count_biomass_plot, "frond_count_plot_estimates.csv")
-#summarize by Site
+write.csv(frond_count_biomass_plot, "3_derived_data/2025/macro_biomass_plot.csv", row.names = FALSE)
+
 
 ### MACROCYSTIS SUMMARY FIGURES (step 4 - plots) ### -----------------------------------------
 
@@ -294,13 +320,13 @@ ggplot(frond_count_biomass_plot %>%
            !(site == "Westbeach" & period == "Aug/2018"), 
            !(site == "Triquet" & period == "Aug/2018")))+  
   #removes the Aug survey when July was also surveyed that year
-  geom_point(aes(x=date, y=mean_biomass_m2_FR, 
+  geom_point(aes(x=date, y=mean_biomass_m2, 
                  group=site, col=site, size = 1.5))+
-  geom_line(aes(x=date, y=mean_biomass_m2_FR, 
+  geom_line(aes(x=date, y=mean_biomass_m2, 
                 group=site, col=site))+
-  geom_errorbar(aes(y=mean_biomass_m2_FR,x=date, 
-                    ymin=mean_biomass_m2_FR-stdev_biomass_m2_FR, 
-                    ymax=mean_biomass_m2_FR+stdev_biomass_m2_FR), 
+  geom_errorbar(aes(y=mean_biomass_m2,x=date, 
+                    ymin=mean_biomass_m2-stdev_biomass_m2, 
+                    ymax=mean_biomass_m2+stdev_biomass_m2), 
                 size=0.3, width=0)+
   theme_bw()+
   theme(panel.grid.minor = element_blank(),
@@ -338,7 +364,7 @@ ggplot(frond_count_biomass_plot %>%
         axis.text.x=element_text(angle=90),
         text=element_text(size=12))+
   labs(x="", y="Frond Density /m^2)")#+
-  facet_grid(~year, scale = "free")#, space = "free")
+  #facet_grid(~year, scale = "free")#, space = "free")
 
 ## PLANT DENSITY annual 
 ggplot(frond_count_biomass_plot %>%
@@ -368,30 +394,5 @@ ggplot(frond_count_biomass_plot %>%
         axis.text.x=element_text(angle=90),
         text=element_text(size=12))+
   labs(x="", y="Plant Density /m^2)")#+
-  facet_grid(~year, scale = "free")#, space = "free")
-
-  #' ### BIOMASS seasonal (2016-2018 only, Westbeach, Meay, Triquet, Womanley)
-  ggplot(frond_count_biomass_plot %>%
-           filter(site %in% c("Meay", 
-                              "Womanley", "Triquet", "Westbeach")) %>%
-           #selects permanent sites with repetitive sampling 
-           filter(year %in% c("2016", "2017", "2018")))+
-    geom_point(aes(x=date, y=mean_biomass_m2_FR, 
-                   group=site, col=site, size = 1.5))+
-    geom_line(aes(x=date, y=mean_biomass_m2_FR, 
-                  group=site, col=site))+
-    geom_errorbar(aes(y=mean_biomass_m2_FR,x=date, 
-                      ymin=mean_biomass_m2_FR-stdev_biomass_m2_FR, 
-                      ymax=mean_biomass_m2_FR+stdev_biomass_m2_FR), 
-                  size=0.3, width=0)+
-    theme_bw()+
-    theme(panel.grid.minor = element_blank(),
-          panel.grid.major = element_blank(),
-          axis.text.x=element_text(angle=90),
-          text=element_text(size=12))+
-    scale_x_date(date_labels = "%b",
-                 date_breaks = "1 month",
-                 )+
-    labs(x="", y="Biomass (kg/m^2)")+
-    facet_grid(~year, scale = "free")#, space = "free")
+  #facet_grid(~year, scale = "free")#, space = "free")
 
